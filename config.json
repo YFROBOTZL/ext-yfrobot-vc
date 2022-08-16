@@ -1,0 +1,25 @@
+{
+  "name": {
+    "zh-cn": "离线语音识别模块",
+    "en": "Offline Speech Recognition Module"
+  },
+  "description": {
+    "zh-cn": "支持 YFROBOT: 离线语音识别模块。",
+    "en": "Support YFROBOT: Offline Speech Recognition Module."
+  },
+  "author": "YFROBOT",
+  "email": "yfrobot@qq.com",
+  "license": "MIT",
+  "isBoard": false,
+  "id": "yfrobot_speech",
+  "version": "0.0.1",
+  "platform": ["win", "mac", "web"],
+  "asset": {
+    "arduinoC": {
+      "dir": "arduinoC/",
+      "version": "0.0.1",
+      "board": ["arduino","arduinounor3","arduinonano","leonardo","mega2560","esp32","microbit"],
+      "main": "main.ts"
+    }
+  }
+}
