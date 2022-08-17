@@ -65,7 +65,8 @@
             ["A6", "A6"],
             ["A7", "A7"]
         ],
-        "default_beginSoftSerial": "2"
+        "default_beginSoftSerial": "2",
+        "default_vcSpeechRecognitionSoftware_tx":"10"
     },
     "SSRXD": {
         "menu": [
@@ -90,7 +91,8 @@
             ["A6", "A6"],
             ["A7", "A7"]
         ],
-        "default_beginSoftSerial": "3"
+        "default_beginSoftSerial": "3",
+        "default_vcSpeechRecognitionSoftware_rx":"11"
     },
     "APIN": {
         "menu": [

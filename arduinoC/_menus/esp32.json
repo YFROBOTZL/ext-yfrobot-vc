@@ -99,7 +99,8 @@
             ["P12", "P12"],
             ["P13", "P13"]
         ],
-        "default_beginSoftSerial": "P1"
+        "default_beginSoftSerial": "P1",
+        "default_vcSpeechRecognitionSoftware_tx":"P1"
     },
     "SSRXD": {
         "menu": [
@@ -118,7 +119,8 @@
             ["P12", "P12"],
             ["P13", "P13"]
         ],
-        "default_beginSoftSerial": "P2"
+        "default_beginSoftSerial": "P2",
+        "default_vcSpeechRecognitionSoftware_rx":"P2"
     },
     "APIN": {
         "menu": [

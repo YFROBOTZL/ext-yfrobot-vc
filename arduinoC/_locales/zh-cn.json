@@ -1,13 +1,6 @@
 {
-  "rtc.init|block": "RTC [MODULE]时钟模块初始化",
-  "rtc.setDateTimeCompiled|block": "RTC设置时间为编译时间",
-  "rtc.setDateTime|block": "RTC设置时间为[YEAR]-[MONTH]-[DAY] [HOUR]:[MINUTE]:[SECOND]",
-  "rtc.getDateTime|block": "RTC获取时间[DATETIME]",
-  "rtc.RTCDATETIME.year|menu": "年",
-  "rtc.RTCDATETIME.month|menu": "月",
-  "rtc.RTCDATETIME.day|menu": "日",
-  "rtc.RTCDATETIME.hour|menu": "时",
-  "rtc.RTCDATETIME.minute|menu": "分",
-  "rtc.RTCDATETIME.second|menu": "秒",
-  "rtc.RTCDATETIME.dayOfTheWeek|menu": "星期"
+  "vc.vcSpeechRecognitionSoftware|block": "语音识别模块软串口RX[rx]TX[tx]识别语音并返回数据",
+  "vc.vcSpeechRecognitionHardware|block": "语音识别模块硬串口[SERIAL]识别语音并返回数据",
+  "vc.SERIAL.Hardware|menu": "硬串口",
+  "vc.SERIAL.Software|menu": "软串口"
 }

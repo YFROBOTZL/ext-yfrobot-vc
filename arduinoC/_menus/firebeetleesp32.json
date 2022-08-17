@@ -1,0 +1,85 @@
+{
+	"PIN_AnalogWrite": {
+		"menu": [
+			["A0", "A0"],
+			["A1", "A1"],
+			["A2", "A2"],
+			["A3", "A3"],
+			["A4", "A4"]
+		]
+	},
+	"PIN_AnalogRead": {
+		"menu": [
+			["A0", "A0"],
+			["A1", "A1"],
+			["A2", "A2"],
+			["A3", "A3"],
+			["A4", "A4"]
+		]
+	},
+	"PIN_DigitalWrite": {
+		"menu": [
+			["D2", "D2"],
+			["D3", "D3"],
+			["D4", "D4"],
+			["D7", "D7"],
+			["D8", "D8"],
+			["D9", "D9"]
+		],
+        "default_trafficLight_PIN1": "D2",
+        "default_trafficLight_PIN2": "D3"
+	},
+	"PIN_DigitalRead": {
+		"menu": [
+			["D2", "D2"],
+			["D3", "D3"],
+			["D4", "D4"],
+			["D7", "D7"],
+			["D8", "D8"],
+			["D9", "D9"]
+		]
+	},
+	"PINMODE":{
+		"menu": [
+			["INPUT", "INPUT"],
+			["OUTPUT", "OUTPUT"],
+			["PULLUP", "PULLUP"],
+			["INPUT_PULLUP", "INPUT_PULLUP"],
+			["PULLDOWN", "PULLDOWN"],
+			["INPUT_PULLDOWN", "INPUT_PULLDOWN"],
+			["OPEN_DRAIN", "OPEN_DRAIN"],
+			["OUTPUT_OPEN_DRAIN", "OUTPUT_OPEN_DRAIN"],
+			["SPECIAL", "SPECIAL"]
+		]
+	},
+    "SER": {
+        "menu": [
+            ["Serial", "Serial"]
+        ],
+        "default_beginSerial": "Serial"
+    },
+    "SSTXD": {
+        "menu": [
+			["D2", "D2"],
+			["D3", "D3"],
+			["D4", "D4"],
+			["D7", "D7"],
+			["D8", "D8"],
+			["D9", "D9"]
+        ],
+        "default_beginSoftSerial": "D2",
+        "default_vcSpeechRecognitionSoftware_tx":"D2"
+    },
+    "SSRXD": {
+        "menu": [
+			["D2", "D2"],
+			["D3", "D3"],
+			["D4", "D4"],
+			["D7", "D7"],
+			["D8", "D8"],
+			["D9", "D9"]
+        ],
+        "default_beginSoftSerial": "D3",
+        "default_vcSpeechRecognitionSoftware_rx":"D3"
+    }
+}
