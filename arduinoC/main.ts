@@ -10,14 +10,7 @@
  * @date  2022-08-17
 */
 
-enum SERIAL {
-    //% block="Hardware"
-    Hardware,
-    //% block="Software"
-    Software
-}
-
-//% color="#fecc11" iconWidth=40 iconHeight=40
+//% color="#ea8958" iconWidth=40 iconHeight=40
 namespace vc {
   
   //% block="VC Hardware [SERIAL] recognize speech and receive data " blockType="reporter"
