@@ -4,15 +4,15 @@
     "en": "Offline Speech Recognition Module"
   },
   "description": {
-    "zh-cn": "支持 YFROBOT: 离线语音识别模块。",
-    "en": "Support YFROBOT: Offline Speech Recognition Module."
+    "zh-cn": "V0.0.2, 支持 YFROBOT: 离线语音识别模块。",
+    "en": "V0.0.2, Support YFROBOT: Offline Speech Recognition Module."
   },
   "author": "YFROBOT",
   "email": "yfrobot@qq.com",
   "license": "MIT",
   "isBoard": false,
   "id": "yfrobot_speech",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "platform": ["win", "mac", "web"],
   "asset": {
     "arduinoC": {
