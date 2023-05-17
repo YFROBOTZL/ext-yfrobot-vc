@@ -1,4 +1,4 @@
 {
-  "vc.vcSpeechRecognitionSoftware|block": "语音识别模块软串口RX[rx]TX[tx]识别语音并返回数据",
-  "vc.vcSpeechRecognitionHardware|block": "语音识别模块硬串口[SERIAL]识别语音并返回数据"
+  "vc.vcSpeechRecognitionSoftware|block": "语音识别软串口波特率[BAUD]RX[rx]TX[tx]识别并返回数据",
+  "vc.vcSpeechRecognitionHardware|block": "语音识别硬串口波特率[BAUD]识别并返回数据"
 }

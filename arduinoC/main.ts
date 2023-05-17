@@ -10,21 +10,38 @@
  * @date  2022-08-17
 */
 
+// esp32 MicroBit 软串口不支持 115200；后续产品统一更改为9600波特率
+enum BAUDLIST {
+    //% block="9600"
+    9600,
+    //% block="115200"
+    115200
+}
+
+
 //% color="#ea8958" iconWidth=40 iconHeight=40
 namespace vc {
     
-  //% block="VC Hardware [SERIAL] recognize speech and receive data " blockType="reporter"
-  //% SERIAL.shadow="dropdown" SERIAL.options="SER"
-  export function vcSpeechRecognitionHardware(parameter: any, block: any) {
-    let serial = parameter.SERIAL.code;
-    Generator.addInclude("include_HardwareSerial", `#define yfrobotSerial ${serial}`);
-    
-    Generator.addSetup(`vc_initSetup`, `yfrobotSerial.begin(115200);`);
+  //% block="VC Software Baud[BAUD] RX[rx]TX[tx] recognize speech and receive data " blockType="reporter"
+  //% BAUD.shadow="dropdown" BAUD.options="BAUDLIST" BAUD.defl="BAUDLIST.9600"
+  //% rx.shadow="dropdown" rx.options="SSRXD"
+  //% tx.shadow="dropdown" tx.options="SSTXD"
+  export function vcSpeechRecognitionSoftware(parameter: any, block: any) {
+    let baud = parameter.BAUD.code;
+    let rxpin = parameter.rx.code;
+    let txpin = parameter.tx.code;
+
+    Generator.addInclude("include_SoftwareSerial", `#include <SoftwareSerial.h>\n`+
+        `SoftwareSerial mySerial(${rxpin}, ${txpin}); // RX, TX\n`+
+        `#define yfrobotSerial mySerial\n`
+    );
+    Generator.addSetup(`vc_initSetup`, `yfrobotSerial.begin(${baud});`);
+
     Generator.addInclude(`defineserialReceiveData`, `uint8_t serialReceiveData();`)
     Generator.addInclude(`defineserialReceiveDataFun`, ``+
         `uint8_t serialReceiveData() {\n`+
         `  uint8_t c;\n`+
-        `  uint8_t inBuf[3];   //数据数组\n`+
+        `  static uint8_t inBuf[3];   //数据数组\n`+         // static 必须有，在测试ESPONE 主板时，没有无法正常工作
         `  static uint8_t offset;\n`+
         `  static uint32_t checksum;\n`+
         `  static enum _serial_state { IDLE, HEADER_5A } c_state;\n\n`+
@@ -53,26 +70,19 @@ namespace vc {
 
     Generator.addCode('serialReceiveData()');
   }
-
     
-  //% block="VC Software RX[rx]TX[tx] recognize speech and receive data " blockType="reporter"
-  //% rx.shadow="dropdown" rx.options="SSRXD"
-  //% tx.shadow="dropdown" tx.options="SSTXD"
-  export function vcSpeechRecognitionSoftware(parameter: any, block: any) {
-    let rxpin = parameter.rx.code;
-    let txpin = parameter.tx.code;
-
-    Generator.addInclude("include_SoftwareSerial", `#include <SoftwareSerial.h>\n`+
-        `SoftwareSerial mySerial(${rxpin}, ${txpin}); // RX, TX\n`+
-        `#define yfrobotSerial mySerial\n`
-    );
+  //% block="VC Hardware Serial Baud[BAUD] recognize speech and receive data " blockType="reporter"
+  //% BAUD.shadow="dropdown" BAUD.options="BAUDLIST" BAUD.defl="BAUDLIST.9600"
+  export function vcSpeechRecognitionHardware(parameter: any, block: any) {
+    let baud = parameter.BAUD.code;
+    Generator.addInclude("include_HardwareSerial", `#define yfrobotSerial Serial`);
     
-    Generator.addSetup(`vc_initSetup`, `yfrobotSerial.begin(115200);`);
+    Generator.addSetup(`vc_initSetup`, `yfrobotSerial.begin(${baud});`);
     Generator.addInclude(`defineserialReceiveData`, `uint8_t serialReceiveData();`)
     Generator.addInclude(`defineserialReceiveDataFun`, ``+
         `uint8_t serialReceiveData() {\n`+
         `  uint8_t c;\n`+
-        `  uint8_t inBuf[3];   //数据数组\n`+
+        `  static uint8_t inBuf[3];   //数据数组\n`+         // static 必须有，在测试ESPONE 主板时，没有无法正常工作
         `  static uint8_t offset;\n`+
         `  static uint32_t checksum;\n`+
         `  static enum _serial_state { IDLE, HEADER_5A } c_state;\n\n`+
@@ -100,7 +110,6 @@ namespace vc {
     );
 
     Generator.addCode('serialReceiveData()');
-
   }
 
 }
